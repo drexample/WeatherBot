@@ -1,0 +1,11 @@
+<form method="post" enctype=multipart/form-data>
+        {{ form.hidden_tag() }}
+        {% for element in form %}
+            {% if element.widget.input_type != 'hidden' %}
+                {{ element.label }} {{ element() }} <br>
+            {% endif %}
+        {% endfor %}
+        <input type="submit">
+    </form>
+<br>
+{{ result }}
