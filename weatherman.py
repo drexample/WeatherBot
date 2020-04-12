@@ -47,8 +47,8 @@ def get_weather(weatherplace):
                      params={'id': city_id, 'units': 'metric', 'lang': 'ru', 'APPID': appid})
         data = res.json()
         result = []
-        result = "Погода для населенного пункта " + weatherplace + ": сейчас " + str(data['weather'][0]['description']) + ", температура " + str(data['main']['temp']) + " по Цельсию, \n максимальная температура на сегодня: " + str(data['main']['temp_max']) + ", минимальная: " + str(data['main']['temp_min'])
-
+        result = "Погода для населенного пункта " + weatherplace + ": сейчас " + str(data['weather'][0]['description']) + ", температура " + str(data['main']['temp']) + " градусов по Цельсию, скорость ветра: " + str(data['wind']['speed']) + " м/с, максимальная температура на сегодня: " + str(data['main']['temp_max']) + ", минимальная: " + str(data['main']['temp_min'])
+        print(data)
         print("temp:", data['main']['temp'])
         print("temp_min:", data['main']['temp_min'])
         print("temp_max:", data['main']['temp_max'])
